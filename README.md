@@ -25,7 +25,7 @@ mkdir html_docker
 cd html_docker
 ```
 ### 3. Folder Structure
-,,,
+```
 html_docker/
 │
 ├── docker-compose.yml
@@ -34,7 +34,7 @@ html_docker/
     ├── index.html
     ├── style.css
     └── script.js
-,,,
+```
 ### 4. Create Dockerfile
 ```
 FROM nginx:alpine
