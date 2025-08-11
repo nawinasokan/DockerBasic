@@ -64,6 +64,11 @@ http://127.0.0.1:8080
 ```
 
 ### 8. Useful Commands
+
+For Linux User Add prefix docker command
+```sudo```
+
+
 ```
 docker compose up -d     # Start in background
 docker compose down      # Stop
