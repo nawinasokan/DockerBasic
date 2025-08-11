@@ -1,4 +1,80 @@
-# DockerForDjango
+# Run Static HTML + CSS + JS with Nginx in Docker
+
+No need to install a web server locally — just Docker and Docker Compose.
+
+## Why use Docker?
+- Consistent environment for everyone.
+- No extra setup — just one command to run.
+- Lightweight and fast with Nginx.
+- Easy to deploy anywhere.
+
+---
+
+## 📌 Setup for Windows
+
+### 1. Install Docker Desktop
+Download and install from:  
+https://www.docker.com/products/docker-desktop  
+Enable **WSL 2 backend** when prompted.
+
+---
+
+### 2. Create Project Folder
+```
+mkdir html_docker
+cd html_docker
+```
+### 3. Folder Structure
+
+html_docker/
+│
+├── docker-compose.yml
+├── Dockerfile
+└── site/
+    ├── index.html
+    ├── style.css
+    └── script.js
+
+### 4. Create Dockerfile
+```
+FROM nginx:alpine
+COPY site/ /usr/share/nginx/html
+```
+### 5. Create docker-compose.yml
+
+```
+services:
+  web:
+    build: .
+    container_name: html_web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./site:/usr/share/nginx/html
+    restart: always
+```
+### 6. Build & Run
+```
+docker compose up --build -d
+```
+### 7. Access the Site
+Open in your browser:
+```
+http://127.0.0.1:8080
+```
+
+### 8. Useful Commands
+```
+docker compose up -d     # Start in background
+docker compose down      # Stop
+docker compose ps        # List running containers
+docker compose logs web  # Show logs
+```
+
+
+
+
+
 **Docker for Django + PostgreSQL**  
 This guide explains how to run a **Django application** with **PostgreSQL** completely inside Docker.  
 You won’t need to install Python or PostgreSQL locally — only **Docker** and **Docker Compose**.
