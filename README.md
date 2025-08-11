@@ -53,6 +53,7 @@ services:
       - ./site:/usr/share/nginx/html
     restart: always
 ```
+Automatically restart the docker container using this command ```restart: always```
 ### 6. Build & Run
 ```
 docker compose up --build -d
