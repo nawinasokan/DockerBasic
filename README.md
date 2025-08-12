@@ -74,14 +74,13 @@ For Linux User Add prefix docker command
 docker compose up -d     # Start in background
 docker compose down      # Stop
 docker compose ps        # List running containers
+docker compose ps -a     # List all(running, stopped, exited) containers 
 docker compose logs web  # Show logs
 ```
 
+---
 
-
-
-
-**Docker for Django + PostgreSQL**  
+# Docker for Django + PostgreSQL
 This guide explains how to run a **Django application** with **PostgreSQL** completely inside Docker.  
 You won’t need to install Python or PostgreSQL locally — only **Docker** and **Docker Compose**.
 
